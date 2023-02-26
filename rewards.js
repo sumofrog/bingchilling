@@ -5,16 +5,16 @@ const searchTerms = [
     "lamp", "holdup", "eyes", "shade",
     "shoes", "man time", "juicy", "couture",
     "blessed", "blursed", "boomer", "backend", 
-    "pumpkin", "moose", "pokemon", "temper",
+    "pumpkin", "moose", "sleeptoad", "temper",
     "moon", "bloom", "tonic", "orange", 
     "fruit", "banana", "flower", "shredded",
-    "wheat", "snowboard", "noodles", "asian",
+    "wheat", "somber", "noodles", "asian",
     "jamba", "marley", "holly", "jolly",
     "bama", "cracks", "dry", "burger", 
     "can", "tuna", "pouch", "laptop",
-    "notes", "music", "kale", "dust",
+    "notes", "shallow", "kale", "dust",
     "olive", "wine", "moo", "cow", 
-    "ninja", "xbox", "pc", "paper",
+    "ninja", "bluebook", "mess", "paper",
     "towel", "bathrobe", "shower", "roll",
     "jamaica", "metallic", "silver", "index",
     "gold", "fund", "wealth", "moocher", 
@@ -22,12 +22,19 @@ const searchTerms = [
     "metal", "gear", "hotrod", "race",
     "find", "time", "last dance", "scout",
     "crew", "chief", "lambast", "clothes",
-    "throw", "sleeping", "boxes", "fedex",
-    "amazon", "bestbuy", "jcrew", "generation",
-    "shopping", "twitch", "webcam", "camera",
-    "headphones", "printer", "mousepad", "mice",
-    "dog", "cat", "fish", "lizard", 
-    "aliens", "will", "save", "us"
+    "throw", "sleeping", "boxes", "pinewood",
+    "amazon", "stomps", "amping", "generation",
+    "shopping", "socrates", "webcam", "napolean",
+    "headphones", "printer", "mohogany", "teak",
+    "sage", "aries", "pike", "pots", 
+    "greenmen", "will", "save", "us",
+    "lambast", "balast", "area51", "roswell",
+    "xenomorphius", "mexico", "linens", "tablet",
+    "quests", "cereal", "flying", "saucer", 
+    "spiral", "fibonacci", "scifi", "fastest",
+    "airborne", "accelerate", "light", "drones",
+    "adamantium", "wolves", "cardboard", "glamour",
+    "stumps", "polyester", "aintnoway", "mahgood"
 ]; 
 
 const bing = "https://bing.com/search?q=";
@@ -36,7 +43,7 @@ function generateTerms() {
     var safetySwitch = 0;
     var terms = [];
     
-    while (terms.length < 24) {
+    while (terms.length < 34) { 
         if (safetySwitch > 200) { 
             return ["Error generating full list of search terms"]; 
         };
@@ -58,7 +65,7 @@ async function search() {
     const terms = generateTerms();
     for (const t of terms) {
         window.open(bing + t);
-        await this.timeout(Math.random() * 4000 + 500);
+        await this.timeout(Math.random() * 5000 + 500);
     }
 }
 
