@@ -40,11 +40,11 @@ const searchTerms = [
 const bing = "https://bing.com/search?q=";
 
 function generateTerms() {
-    var safetySwitch = 0;
+    var safetySwitch = 0; 
     var terms = [];
     
-    while (terms.length < 34) { 
-        if (safetySwitch > 200) { 
+    while (terms.length < 34) {              // number of search terms to populate
+        if (safetySwitch > 200) {            // iteration limit to find unique search terms
             return ["Error generating full list of search terms"]; 
         };
         safetySwitch++;
@@ -65,7 +65,7 @@ async function search() {
     const terms = generateTerms();
     for (const t of terms) {
         window.open(bing + t);
-        await this.timeout(Math.random() * 5000 + 500);
+        await this.timeout(Math.random() * 5000 + 500); // time delay in milliseconds
     }
 }
 
