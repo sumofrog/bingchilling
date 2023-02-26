@@ -38,8 +38,7 @@ function generateTerms() {
     
     while (terms.length < 24) {
         if (safetySwitch > 200) { 
-            console.log('safety switch on');
-            break; 
+            return ["Error generating full list of search terms"]; 
         };
         safetySwitch++;
 
@@ -59,9 +58,8 @@ async function search() {
     const terms = generateTerms();
     for (const t of terms) {
         window.open(bing + t);
-        await this.timeout(Math.random() * 3500 + 500);
+        await this.timeout(Math.random() * 4000 + 500);
     }
 }
-
 
 search();
