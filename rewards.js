@@ -44,7 +44,7 @@ function generateTerms() {
     var terms = [];
     
     while (terms.length < 34) {              // number of search terms to populate
-        if (safetySwitch > 200) {            // iteration limit to find unique search terms
+        if (safetySwitch > 2000) {            // iteration limit to find unique search terms
             return ["Error generating full list of search terms"]; 
         };
         safetySwitch++;
